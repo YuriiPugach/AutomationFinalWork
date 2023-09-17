@@ -10,6 +10,7 @@ import org.testng.annotations.Listeners;
 import pages.BasePage;
 import pages.ClickerPage;
 import pages.DragNDropPage;
+import pages.MainPage;
 import utils.TestResultListeners;
 
 @Listeners(TestResultListeners.class)
@@ -24,6 +25,7 @@ public class BaseTest {
     protected BasePage basePage = new BasePage(driver);
     protected ClickerPage clickerPage = new ClickerPage(driver);
     protected DragNDropPage dragNDropPage = new DragNDropPage(driver);
+    protected MainPage mainPage = new MainPage(driver);
 
     @AfterSuite
     public void closeDriver(){

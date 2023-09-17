@@ -21,6 +21,12 @@ public class AssertionsClass {
         Assert.assertEquals(actual, expected,
                 "Я ожидал получить число " + expected + ". А получил число " + actual + ".");
     }
+    public void equalsOfButtons(String actual, String expected){
+        Assert.assertEquals(actual,expected, "Я ожидал получить название кнопки " + expected + ". А получил название " + actual + "." );
+    }
+    public void equalsPageTitle(String actual, String expected){
+        Assert.assertEquals(actual,expected, "Я ожидал получить название страницы " + expected + ". А получил название " + actual + ".");
+    }
 
     public void isDisplayed(By by){
         Assert.assertTrue(elements.findElement(by).isDisplayed());

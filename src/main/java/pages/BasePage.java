@@ -15,18 +15,29 @@ public class BasePage {
     static ElementsClass elements;
     static WaitersClass wait;
 
-    public BasePage(WebDriver driver){
+    public BasePage(WebDriver driver) {
         this.driver = driver;
         action = new ActionClass(driver);
         assertions = new AssertionsClass(driver);
         elements = new ElementsClass(driver);
         wait = new WaitersClass(driver);
     }
-    public static void acceptCookies(By by){
-        try{
+
+    public static void acceptCookies(By by) {
+        try {
             wait.waitForVisabilityOfElementAndReturn(by).click();
-        }catch (
-                Exception e){
+        } catch (
+                Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public static void closePopUpWindow(By by) {
+        try {
+            wait.waitForVisabilityOfElementAndReturn(by).click();
+        } catch (
+                Exception e) {
             e.printStackTrace();
         }
     }
