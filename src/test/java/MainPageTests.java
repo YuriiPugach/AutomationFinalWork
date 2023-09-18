@@ -51,4 +51,18 @@ public class MainPageTests extends BaseTest{
         mainPage.assertCompareButtonsNames(mainPage.getButtonName8(), "Art");
         mainPage.assertCompareButtonsNames(mainPage.getButtonName9(), "Food");
     }
+    @Test
+    public void CheckNumbersOfItemsOnTheMainPage(){
+        mainPage.openPage();
+        mainPage.closePopUpWindow();
+        mainPage.assertCompareNumberOfItemsOnTheMainPage(mainPage.getNumbersOfItemsOnTheMainPage(), 20);
+
+    }
+    @Test
+    public void CheckNNumberOfButtonsInTheHeader (){
+        mainPage.openPage();
+        mainPage.closePopUpWindow();
+        mainPage.assertCompareNumberOfButtonsInTheHeader(mainPage.getNumberOfButtonsInTheHeader(), 8);
+    }
+
 }

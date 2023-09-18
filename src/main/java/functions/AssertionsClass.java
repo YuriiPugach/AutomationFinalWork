@@ -27,6 +27,9 @@ public class AssertionsClass {
     public void equalsPageTitle(String actual, String expected){
         Assert.assertEquals(actual,expected, "Я ожидал получить название страницы " + expected + ". А получил название " + actual + ".");
     }
+    public void equalsNumberOfElementsOnTheMainPage(int actual, int expected){
+        Assert.assertEquals(actual,expected, "Я ожидал получить количество елементов " + expected + ". А получил количество " + actual + ".");
+    }
 
     public void isDisplayed(By by){
         Assert.assertTrue(elements.findElement(by).isDisplayed());

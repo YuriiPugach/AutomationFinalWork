@@ -42,6 +42,6 @@ public class ClickerPage extends BasePage {
     }
 
     public int getCountOfClickFromField(){
-        return Integer.parseInt(elements.getTextOnElemnt(Locators.counterField));
+        return Integer.parseInt(elements.getTextOnElement(Locators.counterField));
     }
 }
