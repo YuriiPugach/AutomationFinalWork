@@ -29,7 +29,7 @@ public class AssertionsClass {
     }
     public void equalsNumberOfElementsOnTheMainPage(int actual, int expected){
         Assert.assertEquals(actual,expected, "Я ожидал получить количество елементов " + expected + ". А получил количество " + actual + ".");
-    }
+     }
 
     public void isDisplayed(By by){
         Assert.assertTrue(elements.findElement(by).isDisplayed());

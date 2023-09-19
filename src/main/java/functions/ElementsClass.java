@@ -43,6 +43,13 @@ public class ElementsClass {
         return findElement(by).getText();
     }
 
+    public void sendKeysToElement(By by, String text){ findElement(by).sendKeys(text);}
+
+    public String getPageMainPageTitle(By by){
+        findElement(by);
+        return driver.getTitle();
+    }
+
     public int countElements (By by) {
          List<WebElement> numberOfElements = findElements(by);
         int numberOfElement;

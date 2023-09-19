@@ -9,21 +9,100 @@ public class ItemPage extends BasePage {
     }
 
     private static class Labels {
-        private final static String url = "https://shop.brave.ua/uk/";
+        private final static String url = "https://shop.brave.ua/";
     }
     private static class Locators {
-        private final static By loginInButton = By.cssSelector("._OIGZoZGJV1FRVtcSlSn");
+        private final static By popUpWindowCloseButton = By.cssSelector(".xIxPTwbq3Ybg19w1GGgL");
+        private final static By loginInButtonOnTheMainPage = By.cssSelector("._OIGZoZGJV1FRVtcSlSn");
         private final static By emailField = By.xpath("//div[1]/div/input");
         private final static By passwordField = By.xpath("//div[2]/div/input");
         private final static By loginInButtonOnTheLoginPage = By.cssSelector(".vFhB6yaBSu_LOrFZyXUr");
         private final static By firstItemOnTheMainPage = By.xpath("//div[5]/div/ul/li[1]");
         private final static By firstItemNameOnTheMainPage = By.xpath("//li[@class=\"b-catalog__item\"][1]/div/div/div[1]/a");
-        private final static By ItemNameOnTheItemPage = By.cssSelector(".b-product__title");
+        private final static By itemNameOnTheItemPage = By.cssSelector(".b-product__title");
         private final static By headerButtonArt = By.xpath("//div[@class='qwfqPNbGoqtKVuneeXzX _7mqI3tE0eGEqW1Xh4_Nw']/a[7]");
         private final static By firstItemOnTheArtPage = By.xpath("//div[@class='b-main__block']/ul[1]/li[1]");
         private final static By addToCartButton = By.xpath("//div[@class='B6MRIaaGm0TVg2S7sLWY']/button[2]");
-        private final static By numberOnTheCartIcon = By.xpath("//li[3]/button/span");
-        private final static By shoppingCartPopUpPage = By.xpath("//h4/..");
+//        private final static By numberOnTheCartIcon = By.xpath("//li[3]/button/span");
+        private final static By numberOnTheCartIcon = By.cssSelector(".kaLVbMbN3EMBlafl2u_E");
+        private final static By shoppingCartPopUpPage = By.xpath("//h4");
         private final static By shoppingCartPopUpPageDeleteButton = By.cssSelector(".h4LniKGYzSORWScn8x9t svg");
+        private final static By emptyCartPage = By.cssSelector(".njvg48st8l9zOEBDwOLm.xHJQJ6q3NPqFn1ioi1kk");
     }
+
+    public void openPage() {
+        driver.get(ItemPage.Labels.url);
+    }
+
+    public void closePopUpWindow() {
+        BasePage.closePopUpWindow(ItemPage.Locators.popUpWindowCloseButton);
+    }
+    public void openLoginInPage() {
+        elements.clickOnElement(Locators.loginInButtonOnTheMainPage);
+    }
+    public void clickOnTheLoginInButtonOnTheLoginPage(){
+        elements.clickOnElement(Locators.loginInButtonOnTheLoginPage);
+    }
+    public void clickOnTheArtButtonInTheHeader(){
+        elements.clickOnElement(Locators.headerButtonArt);
+    }
+    public void clickOnTheFirstItemOnTheMainPage(){
+        elements.clickOnElement(Locators.firstItemOnTheMainPage);
+    }
+    public void clickOnTheFirstItemOnTheArtPage(){
+        elements.clickOnElement(Locators.firstItemOnTheArtPage);
+    }
+    public void clickOnTheAddToCartButton(){
+        elements.clickOnElement(Locators.addToCartButton);
+    }
+    public void clickOnTheShoppingCartPopUpPageDeleteButton(){
+        elements.clickOnElement(Locators.shoppingCartPopUpPageDeleteButton);
+    }
+    public void sendKeysToTheEmailField(String text){
+        elements.sendKeysToElement(Locators.emailField, text);
+    }
+    public void sendKeysToThePasswordField(String text){
+        elements.sendKeysToElement(Locators.passwordField, text);
+    }
+
+    public String getTextFromFirstItemNameOnTheMainPage(){
+        return elements.getTextOnElement(Locators.firstItemNameOnTheMainPage);
+
+    }
+    public String getTextFromItemNameOnTheItemPage(){
+        return elements.getTextOnElement(Locators.itemNameOnTheItemPage);
+    }
+    public String getTextFromCartIcon(){
+       return elements.getTextOnElement(Locators.numberOnTheCartIcon);
+    }
+    public String getTextFromEmptyCart(){
+        return elements.getTextOnElement(Locators.emptyCartPage);
+    }
+
+    public String getPageTitle(){
+        return elements.getPageMainPageTitle(Locators.firstItemNameOnTheMainPage);
+    }
+    public String getTextFromCartPage(){
+        return elements.getTextOnElement(Locators.shoppingCartPopUpPage);
+    }
+    public void assertCompareNameOfItemOpenedFromMainPage(String actual, String expected){
+        assertions.equalsPageTitle(actual,expected);
+    }
+    public void assertCheckItemIsAddedToTheCart(String actual, String expected){
+        assertions.equalsPageTitle(actual,expected);
+    }
+    public void assertCheckCartIsEmpty(String actual, String expected){
+        assertions.equalsPageTitle(actual,expected);
+    }
+    public void assetCheckPopUpCartPageIsOpened(String actual, String expected){
+        assertions.equalsPageTitle(actual,expected);
+    }
+    public void asserCheckLoginInWhoseSuccessful(String actual, String expected){
+        assertions.equalsPageTitle(actual,expected);
+    }
+
+
+
+
+
 }

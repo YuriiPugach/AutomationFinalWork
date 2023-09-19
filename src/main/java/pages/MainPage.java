@@ -39,71 +39,71 @@ public class MainPage extends BasePage {
         BasePage.closePopUpWindow(Locators.popUpWindowCloseButton);
     }
 
-    public String getButtonName1() {
+    public String getButtonNameCatalog() {
         return elements.getTextOnElement(Locators.headerButtonCatalog);
     }
 
-    public String getButtonName2() {
+    public String getButtonNameBraveMerch() {
         return elements.getTextOnElement(Locators.headerButtonBraveMerch);
     }
 
-    public String getButtonName3() {
+    public String getButtonNameCloth() {
         return elements.getTextOnElement(Locators.headerButtonCloth);
     }
 
-    public String getButtonName4() {
+    public String getButtonNameHome() {
         return elements.getTextOnElement(Locators.headerButtonHome);
     }
 
-    public String getButtonName5() {
+    public String getButtonNameBeauty() {
         return elements.getTextOnElement(Locators.headerButtonBeauty);
     }
 
-    public String getButtonName6() {
+    public String getButtonNameForKids() {
         return elements.getTextOnElement(Locators.headerButtonForKids);
     }
 
-    public String getButtonName7() {
+    public String getButtonNameSport() {
         return elements.getTextOnElement(Locators.headerButtonSport);
     }
 
-    public String getButtonName8() {
+    public String getButtonNameArt() {
         return elements.getTextOnElement(Locators.headerButtonArt);
     }
 
-    public String getButtonName9() {
+    public String getButtonNameFood() {
         return elements.getTextOnElement(Locators.headerButtonFood);
     }
 
-    public void openPageFromTheHeaderButton2() {
+    public void openPageFromTheHeaderButtonBraveMerch() {
         elements.clickOnElement(Locators.headerButtonBraveMerch);
     }
 
-    public void openPageFromTheHeaderButton3() {
+    public void openPageFromTheHeaderButtonCloth() {
         elements.clickOnElement(Locators.headerButtonCloth);
     }
 
-    public void openPageFromTheHeaderButton4() {
+    public void openPageFromTheHeaderButtonHome() {
         elements.clickOnElement(Locators.headerButtonHome);
     }
 
-    public void openPageFromTheHeaderButton5() {
+    public void openPageFromTheHeaderButtonBeauty() {
         elements.clickOnElement(Locators.headerButtonBeauty);
     }
 
-    public void openPageFromTheHeaderButton6() {
+    public void openPageFromTheHeaderButtonForKids() {
         elements.clickOnElement(Locators.headerButtonForKids);
     }
 
-    public void openPageFromTheHeaderButton7() {
+    public void openPageFromTheHeaderButtonSport() {
         elements.clickOnElement(Locators.headerButtonSport);
     }
 
-    public void openPageFromTheHeaderButton8() {
+    public void openPageFromTheHeaderButtonArt() {
         elements.clickOnElement(Locators.headerButtonArt);
     }
 
-    public void openPageFromTheHeaderButton9() {
+    public void openPageFromTheHeaderButtonFood() {
         elements.clickOnElement(Locators.headerButtonFood);
     }
     public void changeLanguageToEng(){

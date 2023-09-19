@@ -5,35 +5,35 @@ public class MainPageTests extends BaseTest{
     public void checkHeaderButtonsNames() {
         mainPage.openPage();
         mainPage.closePopUpWindow();
-        mainPage.assertCompareButtonsNames(mainPage.getButtonName1(), "Каталог");
-        mainPage.assertCompareButtonsNames(mainPage.getButtonName2(), "Brave Merch");
-        mainPage.assertCompareButtonsNames(mainPage.getButtonName3(), "Одяг, взуття, аксесуари");
-        mainPage.assertCompareButtonsNames(mainPage.getButtonName4(), "Для дому");
-        mainPage.assertCompareButtonsNames(mainPage.getButtonName5(), "Краса і здоров'я");
-        mainPage.assertCompareButtonsNames(mainPage.getButtonName6(), "Для дітей");
-        mainPage.assertCompareButtonsNames(mainPage.getButtonName7(), "Спорт");
-        mainPage.assertCompareButtonsNames(mainPage.getButtonName8(), "Мистецтво");
-        mainPage.assertCompareButtonsNames(mainPage.getButtonName9(), "Їжа та напої");
+        mainPage.assertCompareButtonsNames(mainPage.getButtonNameCatalog(), "Каталог");
+        mainPage.assertCompareButtonsNames(mainPage.getButtonNameBraveMerch(), "Brave Merch");
+        mainPage.assertCompareButtonsNames(mainPage.getButtonNameCloth(), "Одяг, взуття, аксесуари");
+        mainPage.assertCompareButtonsNames(mainPage.getButtonNameHome(), "Для дому");
+        mainPage.assertCompareButtonsNames(mainPage.getButtonNameBeauty(), "Краса і здоров'я");
+        mainPage.assertCompareButtonsNames(mainPage.getButtonNameForKids(), "Для дітей");
+        mainPage.assertCompareButtonsNames(mainPage.getButtonNameSport(), "Спорт");
+        mainPage.assertCompareButtonsNames(mainPage.getButtonNameArt(), "Мистецтво");
+        mainPage.assertCompareButtonsNames(mainPage.getButtonNameFood(), "Їжа та напої");
     }
     @Test
     public void openedPageFromTheHeaderButton(){
         mainPage.openPage();
         mainPage.closePopUpWindow();
-        mainPage.openPageFromTheHeaderButton2();
+        mainPage.openPageFromTheHeaderButtonBraveMerch();
         mainPage.assertCheckTitlePage(mainPage.getPageTitleBraveMerch(),"MADE WITH BRAVERY");
-        mainPage.openPageFromTheHeaderButton3();
+        mainPage.openPageFromTheHeaderButtonCloth();
         mainPage.assertCheckTitlePage(mainPage.getPageTitleFromPage3to9(),"Одяг, взуття, аксесуари");
-        mainPage.openPageFromTheHeaderButton4();
+        mainPage.openPageFromTheHeaderButtonHome();
         mainPage.assertCheckTitlePage(mainPage.getPageTitleFromPage3to9(),"Для дому");
-        mainPage.openPageFromTheHeaderButton5();
+        mainPage.openPageFromTheHeaderButtonBeauty();
         mainPage.assertCheckTitlePage(mainPage.getPageTitleFromPage3to9(),"Краса і здоров'я");
-        mainPage.openPageFromTheHeaderButton6();
+        mainPage.openPageFromTheHeaderButtonForKids();
         mainPage.assertCheckTitlePage(mainPage.getPageTitleFromPage3to9(),"Для дітей");
-        mainPage.openPageFromTheHeaderButton7();
+        mainPage.openPageFromTheHeaderButtonSport();
         mainPage.assertCheckTitlePage(mainPage.getPageTitleFromPage3to9(),"Спорт і відпочинок");
-        mainPage.openPageFromTheHeaderButton8();
+        mainPage.openPageFromTheHeaderButtonArt();
         mainPage.assertCheckTitlePage(mainPage.getPageTitleFromPage3to9(),"Мистецтво та колекціонування");
-        mainPage.openPageFromTheHeaderButton9();
+        mainPage.openPageFromTheHeaderButtonFood();
         mainPage.assertCheckTitlePage(mainPage.getPageTitleFromPage3to9(),"Їжа та напої");
     }
     @Test
@@ -41,15 +41,15 @@ public class MainPageTests extends BaseTest{
         mainPage.openPage();
         mainPage.closePopUpWindow();
         mainPage.changeLanguageToEng();
-        mainPage.assertCompareButtonsNames(mainPage.getButtonName1(), "Catalog");
-        mainPage.assertCompareButtonsNames(mainPage.getButtonName2(), "Brave Merch");
-        mainPage.assertCompareButtonsNames(mainPage.getButtonName3(), "Clothes & shoes");
-        mainPage.assertCompareButtonsNames(mainPage.getButtonName4(), "Home");
-        mainPage.assertCompareButtonsNames(mainPage.getButtonName5(), "Beauty");
-        mainPage.assertCompareButtonsNames(mainPage.getButtonName6(), "For kids");
-        mainPage.assertCompareButtonsNames(mainPage.getButtonName7(), "Sport");
-        mainPage.assertCompareButtonsNames(mainPage.getButtonName8(), "Art");
-        mainPage.assertCompareButtonsNames(mainPage.getButtonName9(), "Food");
+        mainPage.assertCompareButtonsNames(mainPage.getButtonNameCatalog(), "Catalog");
+        mainPage.assertCompareButtonsNames(mainPage.getButtonNameBraveMerch(), "Brave Merch");
+        mainPage.assertCompareButtonsNames(mainPage.getButtonNameCloth(), "Clothes & shoes");
+        mainPage.assertCompareButtonsNames(mainPage.getButtonNameHome(), "Home");
+        mainPage.assertCompareButtonsNames(mainPage.getButtonNameBeauty(), "Beauty");
+        mainPage.assertCompareButtonsNames(mainPage.getButtonNameForKids(), "For kids");
+        mainPage.assertCompareButtonsNames(mainPage.getButtonNameSport(), "Sport");
+        mainPage.assertCompareButtonsNames(mainPage.getButtonNameArt(), "Art");
+        mainPage.assertCompareButtonsNames(mainPage.getButtonNameFood(), "Food");
     }
     @Test
     public void CheckNumbersOfItemsOnTheMainPage(){
