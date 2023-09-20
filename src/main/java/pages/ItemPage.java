@@ -23,11 +23,12 @@ public class ItemPage extends BasePage {
         private final static By headerButtonArt = By.xpath("//div[@class='qwfqPNbGoqtKVuneeXzX _7mqI3tE0eGEqW1Xh4_Nw']/a[7]");
         private final static By firstItemOnTheArtPage = By.xpath("//div[@class='b-main__block']/ul[1]/li[1]");
         private final static By addToCartButton = By.xpath("//div[@class='B6MRIaaGm0TVg2S7sLWY']/button[2]");
-//        private final static By numberOnTheCartIcon = By.xpath("//li[3]/button/span");
+        private final static By CartButton = By.xpath("//ul[@class='YCoeau7dm5cjXAcypFCA']/li[3]");
         private final static By numberOnTheCartIcon = By.cssSelector(".kaLVbMbN3EMBlafl2u_E");
         private final static By shoppingCartPopUpPage = By.xpath("//h4");
         private final static By shoppingCartPopUpPageDeleteButton = By.cssSelector(".h4LniKGYzSORWScn8x9t svg");
         private final static By emptyCartPage = By.cssSelector(".njvg48st8l9zOEBDwOLm.xHJQJ6q3NPqFn1ioi1kk");
+        private final static By closePopUpWindowInTheItemPage = By.xpath("/html/body/div[1]/div[1]/div[3]/div/div/div[2]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/span/div[2]/div/span");
     }
 
     public void openPage() {
@@ -58,6 +59,9 @@ public class ItemPage extends BasePage {
     public void clickOnTheShoppingCartPopUpPageDeleteButton(){
         elements.clickOnElement(Locators.shoppingCartPopUpPageDeleteButton);
     }
+    public void clickToClosePopUpWindowInTheItemPage(){
+        elements.clickOnElement(Locators.closePopUpWindowInTheItemPage);
+    }
     public void sendKeysToTheEmailField(String text){
         elements.sendKeysToElement(Locators.emailField, text);
     }
@@ -71,6 +75,10 @@ public class ItemPage extends BasePage {
     }
     public String getTextFromItemNameOnTheItemPage(){
         return elements.getTextOnElement(Locators.itemNameOnTheItemPage);
+    }
+
+    public void openCart(){
+        elements.clickOnElement(Locators.CartButton);
     }
     public String getTextFromCartIcon(){
        return elements.getTextOnElement(Locators.numberOnTheCartIcon);

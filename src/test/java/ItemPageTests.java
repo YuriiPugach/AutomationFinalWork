@@ -32,7 +32,7 @@ public class ItemPageTests extends BaseTest {
         itemPage.clickOnTheLoginInButtonOnTheLoginPage();
         itemPage.clickOnTheArtButtonInTheHeader();
         itemPage.clickOnTheFirstItemOnTheArtPage();
-        Thread.sleep(2000);
+        itemPage.clickToClosePopUpWindowInTheItemPage();
         itemPage.clickOnTheAddToCartButton();
         itemPage.assertCheckItemIsAddedToTheCart(itemPage.getTextFromCartIcon(), "1");
     }
@@ -47,14 +47,14 @@ public class ItemPageTests extends BaseTest {
         itemPage.clickOnTheLoginInButtonOnTheLoginPage();
         itemPage.clickOnTheArtButtonInTheHeader();
         itemPage.clickOnTheFirstItemOnTheArtPage();
-        Thread.sleep(2000);
+        itemPage.clickToClosePopUpWindowInTheItemPage();
         itemPage.clickOnTheAddToCartButton();
-        itemPage.clickOnTheAddToCartButton();
+        itemPage.openCart();
         itemPage.assetCheckPopUpCartPageIsOpened(itemPage.getTextFromCartPage(), "Shopping cart");
     }
 
     @Test
-    public void CheckItemIsDeletedFromPopUoCartWindow() throws InterruptedException {
+    public void CheckItemIsDeletedFromPopUpCartWindow() throws InterruptedException {
         itemPage.openPage();
         itemPage.closePopUpWindow();
         itemPage.openLoginInPage();
@@ -63,9 +63,9 @@ public class ItemPageTests extends BaseTest {
         itemPage.clickOnTheLoginInButtonOnTheLoginPage();
         itemPage.clickOnTheArtButtonInTheHeader();
         itemPage.clickOnTheFirstItemOnTheArtPage();
-        Thread.sleep(2000);
+        itemPage.clickToClosePopUpWindowInTheItemPage();
         itemPage.clickOnTheAddToCartButton();
-        itemPage.clickOnTheAddToCartButton();
+        itemPage.openCart();
         itemPage.clickOnTheShoppingCartPopUpPageDeleteButton();
         itemPage.assertCheckCartIsEmpty(itemPage.getTextFromEmptyCart(), "There is no items in cart");
     }
