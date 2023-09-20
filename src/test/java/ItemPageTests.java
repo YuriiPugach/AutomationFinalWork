@@ -23,38 +23,7 @@ public class ItemPageTests extends BaseTest {
     }
 
     @Test
-    public void CheckAddingItemToTheCart() throws InterruptedException {
-        itemPage.openPage();
-        itemPage.closePopUpWindow();
-        itemPage.openLoginInPage();
-        itemPage.sendKeysToTheEmailField("TestEmailAdress@meta.ua");
-        itemPage.sendKeysToThePasswordField("Zxcvbnm11!");
-        itemPage.clickOnTheLoginInButtonOnTheLoginPage();
-        itemPage.clickOnTheArtButtonInTheHeader();
-        itemPage.clickOnTheFirstItemOnTheArtPage();
-        itemPage.clickToClosePopUpWindowInTheItemPage();
-        itemPage.clickOnTheAddToCartButton();
-        itemPage.assertCheckItemIsAddedToTheCart(itemPage.getTextFromCartIcon(), "1");
-    }
-
-    @Test
-    public void CheckPopUoCartWindowIsShown() throws InterruptedException {
-        itemPage.openPage();
-        itemPage.closePopUpWindow();
-        itemPage.openLoginInPage();
-        itemPage.sendKeysToTheEmailField("TestEmailAdress@meta.ua");
-        itemPage.sendKeysToThePasswordField("Zxcvbnm11!");
-        itemPage.clickOnTheLoginInButtonOnTheLoginPage();
-        itemPage.clickOnTheArtButtonInTheHeader();
-        itemPage.clickOnTheFirstItemOnTheArtPage();
-        itemPage.clickToClosePopUpWindowInTheItemPage();
-        itemPage.clickOnTheAddToCartButton();
-        itemPage.openCart();
-        itemPage.assetCheckPopUpCartPageIsOpened(itemPage.getTextFromCartPage(), "Shopping cart");
-    }
-
-    @Test
-    public void CheckItemIsDeletedFromPopUpCartWindow() throws InterruptedException {
+    public void CheckItemIsDeletedFromPopUpCartWindow() {
         itemPage.openPage();
         itemPage.closePopUpWindow();
         itemPage.openLoginInPage();
@@ -69,4 +38,36 @@ public class ItemPageTests extends BaseTest {
         itemPage.clickOnTheShoppingCartPopUpPageDeleteButton();
         itemPage.assertCheckCartIsEmpty(itemPage.getTextFromEmptyCart(), "There is no items in cart");
     }
+
+    @Test
+    public void CheckAddingItemToTheCart(){
+        itemPage.openPage();
+        itemPage.closePopUpWindow();
+        itemPage.openLoginInPage();
+        itemPage.sendKeysToTheEmailField("TestEmailAdress@meta.ua");
+        itemPage.sendKeysToThePasswordField("Zxcvbnm11!");
+        itemPage.clickOnTheLoginInButtonOnTheLoginPage();
+        itemPage.clickOnTheArtButtonInTheHeader();
+        itemPage.clickOnTheFirstItemOnTheArtPage();
+        itemPage.clickToClosePopUpWindowInTheItemPage();
+        itemPage.clickOnTheAddToCartButton();
+        itemPage.assertCheckItemIsAddedToTheCart(itemPage.getTextFromCartIcon(), "1");
+    }
+
+    @Test
+    public void CheckPopUoCartWindowIsShown(){
+        itemPage.openPage();
+        itemPage.closePopUpWindow();
+        itemPage.openLoginInPage();
+        itemPage.sendKeysToTheEmailField("TestEmailAdress@meta.ua");
+        itemPage.sendKeysToThePasswordField("Zxcvbnm11!");
+        itemPage.clickOnTheLoginInButtonOnTheLoginPage();
+        itemPage.clickOnTheArtButtonInTheHeader();
+        itemPage.clickOnTheFirstItemOnTheArtPage();
+        itemPage.clickToClosePopUpWindowInTheItemPage();
+        itemPage.clickOnTheAddToCartButton();
+        itemPage.openCart();
+        itemPage.assetCheckPopUpCartPageIsOpened(itemPage.getTextFromCartPage(), "Shopping cart");
+    }
+
 }

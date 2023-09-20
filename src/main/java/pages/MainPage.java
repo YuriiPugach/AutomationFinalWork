@@ -36,7 +36,7 @@ public class MainPage extends BasePage {
     }
 
     public void closePopUpWindow() {
-        BasePage.closePopUpWindow(Locators.popUpWindowCloseButton);
+        MainPage.closePopUpWindow(Locators.popUpWindowCloseButton);
     }
 
     public String getButtonNameCatalog() {
