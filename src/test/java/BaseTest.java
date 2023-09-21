@@ -31,6 +31,7 @@ public class BaseTest {
     }
 
     @BeforeSuite
+
     public void startDriver(){
         driver = DriverFactory.startChromeDriver();
     }

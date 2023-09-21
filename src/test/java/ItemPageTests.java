@@ -10,6 +10,8 @@ public class ItemPageTests extends BaseTest {
         itemPage.sendKeysToThePasswordField("Zxcvbnm11!");
         itemPage.clickOnTheLoginInButtonOnTheLoginPage();
         itemPage.asserCheckLoginInWhoseSuccessful(itemPage.getPageTitle(), "Made with Bravery ᐈ магазин товарів від українських продавців з доставкою по Європі");
+        itemPage.openUserConfigDropUp();
+        itemPage.clickOnLogOutButtonOnTheUserConfigDropUp();
     }
 
     @Test
@@ -24,6 +26,7 @@ public class ItemPageTests extends BaseTest {
 
     @Test
     public void CheckItemIsDeletedFromPopUpCartWindow() {
+
         itemPage.openPage();
         itemPage.closePopUpWindow();
         itemPage.openLoginInPage();
@@ -37,6 +40,9 @@ public class ItemPageTests extends BaseTest {
         itemPage.openCart();
         itemPage.clickOnTheShoppingCartPopUpPageDeleteButton();
         itemPage.assertCheckCartIsEmpty(itemPage.getTextFromEmptyCart(), "There is no items in cart");
+        itemPage.clickOnTheCLoseCartButton();
+        itemPage.openUserConfigDropUp();
+        itemPage.clickOnLogOutButtonOnTheUserConfigDropUp();
     }
 
     @Test
@@ -52,6 +58,11 @@ public class ItemPageTests extends BaseTest {
         itemPage.clickToClosePopUpWindowInTheItemPage();
         itemPage.clickOnTheAddToCartButton();
         itemPage.assertCheckItemIsAddedToTheCart(itemPage.getTextFromCartIcon(), "1");
+        itemPage.openCart();
+        itemPage.clickOnTheShoppingCartPopUpPageDeleteButton();
+        itemPage.clickOnTheCLoseCartButton();
+        itemPage.openUserConfigDropUp();
+        itemPage.clickOnLogOutButtonOnTheUserConfigDropUp();
     }
 
     @Test
@@ -68,6 +79,10 @@ public class ItemPageTests extends BaseTest {
         itemPage.clickOnTheAddToCartButton();
         itemPage.openCart();
         itemPage.assetCheckPopUpCartPageIsOpened(itemPage.getTextFromCartPage(), "Shopping cart");
+        itemPage.clickOnTheShoppingCartPopUpPageDeleteButton();
+        itemPage.clickOnTheCLoseCartButton();
+        itemPage.openUserConfigDropUp();
+        itemPage.clickOnLogOutButtonOnTheUserConfigDropUp();
     }
 
 }

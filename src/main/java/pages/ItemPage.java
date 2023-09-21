@@ -29,10 +29,14 @@ public class ItemPage extends BasePage {
         private final static By shoppingCartPopUpPageDeleteButton = By.cssSelector(".h4LniKGYzSORWScn8x9t svg");
         private final static By emptyCartPage = By.cssSelector(".njvg48st8l9zOEBDwOLm.xHJQJ6q3NPqFn1ioi1kk");
         private final static By closePopUpWindowInTheItemPage = By.xpath("/html/body/div[1]/div[1]/div[3]/div/div/div[2]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/span/div[2]/div/span");
+        private final static By userConfigDropUp = By.cssSelector(".gY7k01psbG4v665ujxgw");
+        private final static By logOutButtonInUserConfigDropUp = By.xpath("//div[@class='NvJ3GLaOnGKMP4jqptef dAP58z41qP08X8sPZ5qC']/a[4]");
+        private final static By closeCartButton = By.cssSelector(".xIxPTwbq3Ybg19w1GGgL");
     }
 
     public void openPage() {
         driver.get(ItemPage.Labels.url);
+        driver.manage().deleteAllCookies();
     }
 
     public void closePopUpWindow() {
@@ -107,6 +111,15 @@ public class ItemPage extends BasePage {
     }
     public void asserCheckLoginInWhoseSuccessful(String actual, String expected){
         assertions.equalsPageTitle(actual,expected);
+    }
+    public void openUserConfigDropUp(){
+        elements.clickOnElement(Locators.userConfigDropUp);
+    }
+    public void clickOnLogOutButtonOnTheUserConfigDropUp(){
+        elements.clickOnElement(Locators.logOutButtonInUserConfigDropUp);
+    }
+    public void clickOnTheCLoseCartButton(){
+        elements.clickOnElement(Locators.closeCartButton);
     }
 
 
