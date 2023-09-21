@@ -9,12 +9,10 @@ public class ItemPageTests extends BaseTest {
         itemPage.sendKeysToTheEmailField("TestEmailAdress@meta.ua");
         itemPage.sendKeysToThePasswordField("Zxcvbnm11!");
         itemPage.clickOnTheLoginInButtonOnTheLoginPage();
-        itemPage.asserCheckLoginInWhoseSuccessful(itemPage.getPageTitle(), "Made with Bravery ᐈ магазин товарів від українських продавців з доставкою по Європі");
-        itemPage.openUserConfigDropUp();
-        itemPage.clickOnLogOutButtonOnTheUserConfigDropUp();
+        itemPage.asserCheckLoginInWhoseSuccessful(itemPage.getPageTitle(), "Made with Bravery ᐈ Support Ukrainian Sellers. Shop and help to restore Ukraine.");
     }
 
-    @Test
+    @Test(dependsOnMethods = {"CheckItemIsDeletedFromPopUpCartWindow"})
     public void OpenFirstItemPage() {
         itemPage.openPage();
         itemPage.closePopUpWindow();
@@ -23,66 +21,32 @@ public class ItemPageTests extends BaseTest {
         String nameOfItemOnItemPAge = itemPage.getTextFromItemNameOnTheItemPage();
         itemPage.assertCompareNameOfItemOpenedFromMainPage(firstItemNameOnTheMainPage.toLowerCase(), nameOfItemOnItemPAge.toLowerCase());
     }
-
-    @Test
-    public void CheckItemIsDeletedFromPopUpCartWindow() {
-
-        itemPage.openPage();
-        itemPage.closePopUpWindow();
-        itemPage.openLoginInPage();
-        itemPage.sendKeysToTheEmailField("TestEmailAdress@meta.ua");
-        itemPage.sendKeysToThePasswordField("Zxcvbnm11!");
-        itemPage.clickOnTheLoginInButtonOnTheLoginPage();
-        itemPage.clickOnTheArtButtonInTheHeader();
-        itemPage.clickOnTheFirstItemOnTheArtPage();
-        itemPage.clickToClosePopUpWindowInTheItemPage();
-        itemPage.clickOnTheAddToCartButton();
-        itemPage.openCart();
-        itemPage.clickOnTheShoppingCartPopUpPageDeleteButton();
-        itemPage.assertCheckCartIsEmpty(itemPage.getTextFromEmptyCart(), "There is no items in cart");
-        itemPage.clickOnTheCLoseCartButton();
-        itemPage.openUserConfigDropUp();
-        itemPage.clickOnLogOutButtonOnTheUserConfigDropUp();
-    }
-
-    @Test
+    @Test(dependsOnMethods = {"LoginInWithValidData"})
     public void CheckAddingItemToTheCart(){
         itemPage.openPage();
-        itemPage.closePopUpWindow();
-        itemPage.openLoginInPage();
-        itemPage.sendKeysToTheEmailField("TestEmailAdress@meta.ua");
-        itemPage.sendKeysToThePasswordField("Zxcvbnm11!");
-        itemPage.clickOnTheLoginInButtonOnTheLoginPage();
         itemPage.clickOnTheArtButtonInTheHeader();
         itemPage.clickOnTheFirstItemOnTheArtPage();
         itemPage.clickToClosePopUpWindowInTheItemPage();
         itemPage.clickOnTheAddToCartButton();
         itemPage.assertCheckItemIsAddedToTheCart(itemPage.getTextFromCartIcon(), "1");
-        itemPage.openCart();
-        itemPage.clickOnTheShoppingCartPopUpPageDeleteButton();
-        itemPage.clickOnTheCLoseCartButton();
-        itemPage.openUserConfigDropUp();
-        itemPage.clickOnLogOutButtonOnTheUserConfigDropUp();
     }
 
-    @Test
+    @Test(dependsOnMethods = {"CheckAddingItemToTheCart"})
     public void CheckPopUoCartWindowIsShown(){
-        itemPage.openPage();
-        itemPage.closePopUpWindow();
-        itemPage.openLoginInPage();
-        itemPage.sendKeysToTheEmailField("TestEmailAdress@meta.ua");
-        itemPage.sendKeysToThePasswordField("Zxcvbnm11!");
-        itemPage.clickOnTheLoginInButtonOnTheLoginPage();
-        itemPage.clickOnTheArtButtonInTheHeader();
-        itemPage.clickOnTheFirstItemOnTheArtPage();
-        itemPage.clickToClosePopUpWindowInTheItemPage();
-        itemPage.clickOnTheAddToCartButton();
         itemPage.openCart();
         itemPage.assetCheckPopUpCartPageIsOpened(itemPage.getTextFromCartPage(), "Shopping cart");
-        itemPage.clickOnTheShoppingCartPopUpPageDeleteButton();
-        itemPage.clickOnTheCLoseCartButton();
-        itemPage.openUserConfigDropUp();
-        itemPage.clickOnLogOutButtonOnTheUserConfigDropUp();
+
     }
+
+    @Test(dependsOnMethods = {"CheckPopUoCartWindowIsShown"})
+    public void CheckItemIsDeletedFromPopUpCartWindow() {
+        itemPage.clickOnTheShoppingCartPopUpPageDeleteButton();
+        itemPage.assertCheckCartIsEmpty(itemPage.getTextFromEmptyCart(), "There is no items in cart");
+
+    }
+
+
+
+
 
 }

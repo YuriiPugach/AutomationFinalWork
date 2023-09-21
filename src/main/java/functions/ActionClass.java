@@ -17,7 +17,4 @@ public class ActionClass {
         actions = new Actions(driver);
     }
 
-    public void dragNdrop(By source, By target){
-        actions.dragAndDrop(elements.findElement(source), elements.findElement(target)).perform();
-    }
 }

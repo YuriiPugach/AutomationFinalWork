@@ -17,10 +17,7 @@ public class AssertionsClass {
         actions = new ActionClass(driver);
     }
 
-    public void equalsOfInt(int actual, int expected) {
-        Assert.assertEquals(actual, expected,
-                "Я ожидал получить число " + expected + ". А получил число " + actual + ".");
-    }
+
     public void equalsOfButtons(String actual, String expected){
         Assert.assertEquals(actual,expected, "Я ожидал получить название кнопки " + expected + ". А получил название " + actual + "." );
     }

@@ -35,10 +35,4 @@ public class WaitersClass {
     public void waitForVisabilityOfElement(By locator){
         waitForFunction(ExpectedConditions.visibilityOfElementLocated(locator),EXPLICITY_WAIT);
     }
-    public void switchToFrame(By locator){
-        waitForFunction(ExpectedConditions.frameToBeAvailableAndSwitchToIt(locator),EXPLICITY_WAIT);
-    }
-    public Alert switchToAlert(){
-        return fluentWait(EXPLICITY_WAIT).until(ExpectedConditions.alertIsPresent());
-    }
 }

@@ -36,7 +36,6 @@ public class ItemPage extends BasePage {
 
     public void openPage() {
         driver.get(ItemPage.Labels.url);
-        driver.manage().deleteAllCookies();
     }
 
     public void closePopUpWindow() {

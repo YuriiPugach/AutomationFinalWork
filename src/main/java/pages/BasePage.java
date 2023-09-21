@@ -23,15 +23,6 @@ public class BasePage {
         wait = new WaitersClass(driver);
     }
 
-    public static void acceptCookies(By by) {
-        try {
-            wait.waitForVisabilityOfElementAndReturn(by).click();
-        } catch (
-                Exception e) {
-            e.printStackTrace();
-        }
-
-    }
 
     public static void closePopUpWindow(By by) {
         try {

@@ -20,10 +20,9 @@ public class BaseTest {
     protected WaitersClass waiters = new WaitersClass(driver);
 
     protected BasePage basePage = new BasePage(driver);
-    protected ClickerPage clickerPage = new ClickerPage(driver);
-    protected DragNDropPage dragNDropPage = new DragNDropPage(driver);
     protected MainPage mainPage = new MainPage(driver);
     protected ItemPage itemPage = new ItemPage(driver);
+    protected SearchField searchField = new SearchField(driver);
 
     @AfterSuite
     public void closeDriver(){

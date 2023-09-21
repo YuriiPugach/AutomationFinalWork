@@ -63,6 +63,7 @@ public class MainPageTests extends BaseTest{
         mainPage.openPage();
         mainPage.closePopUpWindow();
         mainPage.assertCompareNumberOfButtonsInTheHeader(mainPage.getNumberOfButtonsInTheHeader(), 8);
+
     }
 
 }
