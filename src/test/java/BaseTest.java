@@ -14,12 +14,12 @@ import utils.TestResultListeners;
 public class BaseTest {
     protected WebDriver driver = DriverFactory.startChromeDriver();
 
-    protected ActionClass action = new ActionClass(driver);
-    protected AssertionsClass assertions = new AssertionsClass(driver);
-    protected ElementsClass elements = new ElementsClass(driver);
-    protected WaitersClass waiters = new WaitersClass(driver);
-
-    protected BasePage basePage = new BasePage(driver);
+//    protected ActionClass action = new ActionClass(driver);
+//    protected AssertionsClass assertions = new AssertionsClass(driver);
+//    protected ElementsClass elements = new ElementsClass(driver);
+//    protected WaitersClass waiters = new WaitersClass(driver);
+//
+//    protected BasePage basePage = new BasePage(driver);
     protected MainPage mainPage = new MainPage(driver);
     protected ItemPage itemPage = new ItemPage(driver);
     protected SearchField searchField = new SearchField(driver);

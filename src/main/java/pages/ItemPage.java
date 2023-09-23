@@ -91,7 +91,7 @@ public class ItemPage extends BasePage {
     }
 
     public String getPageTitle(){
-        return elements.getPageMainPageTitle(Locators.firstItemNameOnTheMainPage);
+        return elements.getPageTitle(Locators.firstItemNameOnTheMainPage);
     }
     public String getTextFromCartPage(){
         return elements.getTextOnElement(Locators.shoppingCartPopUpPage);
