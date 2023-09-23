@@ -17,7 +17,7 @@ public class SearchField extends BasePage {
         private final static By searchButton = By.cssSelector(".vGV1sm119H7YbusRTE_q");
         private final static By searchCantFindItemText = By.xpath("//h3");
         private final static By typeOfCatalog = By.xpath("//h1");
-//        private final static By openDropUpInTheSearchField = By.xpath("//div[@class=' css-1wy0on6']");
+        private final static By itemIsShownAfterSearchWithOutData = By.xpath("//div[@class='b-main__block']/ul[1]/li[1]");
         }
         public void openPage() {
             driver.get(SearchField.Labels.url);
@@ -52,8 +52,8 @@ public class SearchField extends BasePage {
         public void assertCheckSearchCantFindItems(String actual, String expected){
             assertions.equalsPageTitle(actual,expected);
         }
-    public void assertCheckSearchWithOutEnteredText(String actual, String expected){
-        assertions.equalsPageTitle(actual,expected);
+    public void assertCheckSearchWithOutEnteredText(){
+        assertions.isDisplayed(Locators.itemIsShownAfterSearchWithOutData);
     }
 
 

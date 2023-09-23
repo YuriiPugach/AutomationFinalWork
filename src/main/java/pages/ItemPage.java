@@ -121,6 +121,10 @@ public class ItemPage extends BasePage {
         elements.clickOnElement(Locators.closeCartButton);
     }
 
+    public void assertUserIsLogged(){
+        assertions.isDisplayed(Locators.userConfigDropUp);
+    }
+
 
 
 

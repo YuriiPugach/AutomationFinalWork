@@ -1,19 +1,30 @@
 import org.testng.annotations.Test;
 
+
 public class ItemPageTests extends BaseTest {
+    private static class DataForTests {
+        private final static String loginEmail = "TestEmailAdress@meta.ua";
+        private final static String loginPassword = "Zxcvbnm11!";
+        private final static String mainPageTitle = "Made with Bravery ᐈ Support Ukrainian Sellers. Shop and help to restore Ukraine.";
+        private final static String numberOnCartButton = "1";
+        private final static String textOnCartPopUp = "Shopping cart";
+        private final static String textOnEmptyCart = "There is no items in cart";
+    }
+
     @Test
-    public void LoginInWithValidData() {
+    public void loginInWithValidData() {
         itemPage.openPage();
         itemPage.closePopUpWindow();
         itemPage.openLoginInPage();
-        itemPage.sendKeysToTheEmailField("TestEmailAdress@meta.ua");
-        itemPage.sendKeysToThePasswordField("Zxcvbnm11!");
+        itemPage.sendKeysToTheEmailField(DataForTests.loginEmail);
+        itemPage.sendKeysToThePasswordField(DataForTests.loginPassword);
         itemPage.clickOnTheLoginInButtonOnTheLoginPage();
-        itemPage.asserCheckLoginInWhoseSuccessful(itemPage.getPageTitle(), "Made with Bravery ᐈ Support Ukrainian Sellers. Shop and help to restore Ukraine.");
+        itemPage.asserCheckLoginInWhoseSuccessful(itemPage.getPageTitle(), DataForTests.mainPageTitle);
+        itemPage.assertUserIsLogged();
     }
 
-    @Test(dependsOnMethods = {"CheckItemIsDeletedFromPopUpCartWindow"})
-    public void OpenFirstItemPage() {
+    @Test(dependsOnMethods = {"checkItemIsDeletedFromPopUpCartWindow"})
+    public void openFirstItemPage() {
         itemPage.openPage();
         itemPage.closePopUpWindow();
         String firstItemNameOnTheMainPage = itemPage.getTextFromFirstItemNameOnTheMainPage();
@@ -21,27 +32,27 @@ public class ItemPageTests extends BaseTest {
         String nameOfItemOnItemPAge = itemPage.getTextFromItemNameOnTheItemPage();
         itemPage.assertCompareNameOfItemOpenedFromMainPage(firstItemNameOnTheMainPage.toLowerCase(), nameOfItemOnItemPAge.toLowerCase());
     }
-    @Test(dependsOnMethods = {"LoginInWithValidData"})
-    public void CheckAddingItemToTheCart(){
+    @Test(dependsOnMethods = {"loginInWithValidData"})
+    public void checkAddingItemToTheCartIsShownOnTheCartButton(){
         itemPage.openPage();
         itemPage.clickOnTheArtButtonInTheHeader();
         itemPage.clickOnTheFirstItemOnTheArtPage();
         itemPage.clickToClosePopUpWindowInTheItemPage();
         itemPage.clickOnTheAddToCartButton();
-        itemPage.assertCheckItemIsAddedToTheCart(itemPage.getTextFromCartIcon(), "1");
+        itemPage.assertCheckItemIsAddedToTheCart(itemPage.getTextFromCartIcon(), DataForTests.numberOnCartButton);
     }
 
-    @Test(dependsOnMethods = {"CheckAddingItemToTheCart"})
-    public void CheckPopUoCartWindowIsShown(){
+    @Test(dependsOnMethods = {"checkAddingItemToTheCartIsShownOnTheCartButton"})
+    public void checkPopUoCartWindowIsShown(){
         itemPage.openCart();
-        itemPage.assetCheckPopUpCartPageIsOpened(itemPage.getTextFromCartPage(), "Shopping cart");
+        itemPage.assetCheckPopUpCartPageIsOpened(itemPage.getTextFromCartPage(), DataForTests.textOnCartPopUp);
 
     }
 
-    @Test(dependsOnMethods = {"CheckPopUoCartWindowIsShown"})
-    public void CheckItemIsDeletedFromPopUpCartWindow() {
+    @Test(dependsOnMethods = {"checkPopUoCartWindowIsShown"})
+    public void checkItemIsDeletedFromPopUpCartWindow() {
         itemPage.clickOnTheShoppingCartPopUpPageDeleteButton();
-        itemPage.assertCheckCartIsEmpty(itemPage.getTextFromEmptyCart(), "There is no items in cart");
+        itemPage.assertCheckCartIsEmpty(itemPage.getTextFromEmptyCart(), DataForTests.textOnEmptyCart);
 
     }
 
