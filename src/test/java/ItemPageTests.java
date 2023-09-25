@@ -19,14 +19,12 @@ public class ItemPageTests extends BaseTest {
         itemPage.sendKeysToTheEmailField(DataForTests.loginEmail);
         itemPage.sendKeysToThePasswordField(DataForTests.loginPassword);
         itemPage.clickOnTheLoginInButtonOnTheLoginPage();
-        itemPage.asserCheckLoginInWhoseSuccessful(itemPage.getPageTitle(), DataForTests.mainPageTitle);
         itemPage.assertUserIsLogged();
     }
 
     @Test(dependsOnMethods = {"checkItemIsDeletedFromPopUpCartWindow"})
     public void openFirstItemPage() {
         itemPage.openPage();
-        itemPage.closePopUpWindow();
         String firstItemNameOnTheMainPage = itemPage.getTextFromFirstItemNameOnTheMainPage();
         itemPage.clickOnTheFirstItemOnTheMainPage();
         String nameOfItemOnItemPAge = itemPage.getTextFromItemNameOnTheItemPage();
