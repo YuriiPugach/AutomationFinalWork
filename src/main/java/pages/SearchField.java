@@ -28,18 +28,14 @@ public class SearchField extends BasePage {
             BasePage.closePopUpWindow(SearchField.Locators.popUpWindowCloseButton);
         }
 
-        public void clickOnTheSearchField(){
-            elements.clickOnElement(Locators.searachField);
-        }
+
         public void sendKeyToTheSearchField(String text){
             elements.sendKeysToElement(Locators.searachField, text);
         }
         public void clickOnTheSearchButton(){
             elements.clickOnElement(Locators.searchButton);
         }
-        public String getTextFromTypeOfCatalog(){
-            return elements.getTextOnElement(Locators.typeOfCatalog);
-        }
+
         public String getNameOfSearchedItem(){
             return elements.getTextOnElement(Locators.nameOfItemAfterSearch);
         }
