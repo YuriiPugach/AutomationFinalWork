@@ -32,6 +32,7 @@ public class ItemPage extends BasePage {
         private final static By userConfigDropUp = By.cssSelector(".gY7k01psbG4v665ujxgw");
         private final static By logOutButtonInUserConfigDropUp = By.xpath("//div[@class='NvJ3GLaOnGKMP4jqptef dAP58z41qP08X8sPZ5qC']/a[4]");
         private final static By closeCartButton = By.cssSelector(".xIxPTwbq3Ybg19w1GGgL");
+        private final static By policeAgrimentAgreeButton = By.cssSelector(".vFhB6yaBSu_LOrFZyXUr.vOHxES3rQyHiWyhYNb7K");
     }
 
     public void openPage() {
@@ -44,6 +45,8 @@ public class ItemPage extends BasePage {
     public void openLoginInPage() {
         elements.clickOnElement(Locators.loginInButtonOnTheMainPage);
     }
+    public void closePoliceAgreement(){BasePage.closePopUpWindow(Locators.policeAgrimentAgreeButton);}
+
     public void clickOnTheLoginInButtonOnTheLoginPage(){
         elements.clickOnElement(Locators.loginInButtonOnTheLoginPage);
     }

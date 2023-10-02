@@ -25,6 +25,7 @@ public class ItemPageTests extends BaseTest {
     @Test(dependsOnMethods = {"checkItemIsDeletedFromPopUpCartWindow"})
     public void openFirstItemPage() {
         itemPage.openPage();
+        itemPage.closePoliceAgreement();
         String firstItemNameOnTheMainPage = itemPage.getTextFromFirstItemNameOnTheMainPage();
         itemPage.clickOnTheFirstItemOnTheMainPage();
         String nameOfItemOnItemPAge = itemPage.getTextFromItemNameOnTheItemPage();
@@ -33,6 +34,7 @@ public class ItemPageTests extends BaseTest {
     @Test(dependsOnMethods = {"loginInWithValidData"})
     public void checkAddingItemToTheCartIsShownOnTheCartButton(){
         itemPage.openPage();
+        itemPage.closePoliceAgreement();
         itemPage.clickOnTheArtButtonInTheHeader();
         itemPage.clickOnTheFirstItemOnTheArtPage();
         itemPage.clickToClosePopUpWindowInTheItemPage();
